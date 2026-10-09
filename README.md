@@ -1,32 +1,71 @@
-# React + TypeScript + Vite
+# Midnight Metro Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+An animated 3D portfolio for **Deepak Kumar**, an AI & ML student and full-stack developer. The experience presents real GitHub projects as stations on a cinematic midnight metro journey.
 
-Currently, two official plugins are available:
+## Live Website
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+**[View the portfolio on Vercel](https://portfolio-met.vercel.app)**
 
-## React Compiler
+> The Vercel deployment may require authentication while Deployment Protection is enabled.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Highlights
 
-## Expanding the Oxlint configuration
+- Interactive Three.js metro scene
+- Animated, responsive portfolio experience
+- Real project data and links from [@Dkumar8264](https://github.com/Dkumar8264)
+- Project case-study dialogs with live demos and source links
+- Optional ambient sound and motion controls
+- Reduced-motion accessibility support
+- Mobile-optimized presentation
 
-If you are developing a production application, we recommend enabling type-aware lint rules by installing `oxlint-tsgolint` and editing `.oxlintrc.json`:
+## Featured Projects
 
-```json
-{
-  "$schema": "./node_modules/oxlint/configuration_schema.json",
-  "plugins": ["react", "typescript", "oxc"],
-  "options": {
-    "typeAware": true
-  },
-  "rules": {
-    "react/rules-of-hooks": "error",
-    "react/only-export-components": ["warn", { "allowConstantExport": true }]
-  }
-}
+- **FoodWise** — AI food-demand prediction and waste reduction for college canteens
+- **InduIntel** — AI-powered industrial catalog enrichment pipeline
+- **TeamFlow** — MERN project and task management workspace
+- **Recampus** — Campus lost-and-found and peer marketplace platform
+- **SpendX** — Personal expense tracking and budgeting application
+
+## Tech Stack
+
+- React 19 and TypeScript
+- Vite
+- Three.js with React Three Fiber and Drei
+- Tailwind CSS
+- shadcn/ui
+- Lucide icons
+
+## Local Development
+
+```bash
+npm install
+npm run dev
 ```
 
-See the [Oxlint rules documentation](https://oxc.rs/docs/guide/usage/linter/rules) for the full list of rules and categories.
+Open the local URL shown by Vite.
+
+## Production Build
+
+```bash
+npm run build
+npm run preview
+```
+
+The optimized build is generated in `dist/`.
+
+## Quality Checks
+
+```bash
+npm run lint
+npm run build
+```
+
+## Contact
+
+- GitHub: [Dkumar8264](https://github.com/Dkumar8264)
+- LinkedIn: [Deepak Kumar](https://www.linkedin.com/in/deepak-kumar-65a192340)
+- Email: [krd04197@gmail.com](mailto:krd04197@gmail.com)
+
+---
+
+Built by Deepak Kumar.
