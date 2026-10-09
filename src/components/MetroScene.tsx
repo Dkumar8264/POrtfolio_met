@@ -77,7 +77,7 @@ function Tunnel({ reducedMotion }: Pick<MetroSceneProps, 'reducedMotion'>) {
 
 function SignalOrbit({ activeProject, reducedMotion }: MetroSceneProps) {
   const orbit = useRef<THREE.Group | null>(null)
-  const colours = ['#f97316', '#38bdf8', '#c084fc']
+  const colours = ['#f97316', '#38bdf8', '#c084fc', '#fb923c', '#60a5fa']
 
   useFrame(({ clock }) => {
     if (!orbit.current || reducedMotion) return

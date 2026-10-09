@@ -28,27 +28,58 @@ const currentYear = new Date().getFullYear()
 const projects = [
   {
     number: '01',
-    name: 'Signal Archive',
-    type: 'Product experience',
-    description: 'A placeholder case study for a product that turns real-time signals into calm, confident decisions.',
-    stack: ['React', 'Motion', 'Design system'],
+    name: 'FoodWise',
+    type: 'AI food intelligence',
+    description: 'An AI-based demand prediction and waste-reduction platform that helps college canteens forecast meals, learn from student preferences, and coordinate surplus rescue.',
+    stack: ['JavaScript', 'Machine learning', 'Multi-tenant SaaS'],
     colour: 'orange',
+    github: 'https://github.com/Dkumar8264/FoodWise',
+    live: 'https://foodwise-iota.vercel.app',
+    status: 'Active build',
   },
   {
     number: '02',
-    name: 'Night Shift',
-    type: 'Brand & interface',
-    description: 'A demo project representing a visual identity and conversion-led website for an after-hours creative studio.',
-    stack: ['Strategy', 'UI/UX', 'WebGL'],
+    name: 'InduIntel',
+    type: 'AI product enrichment',
+    description: 'A five-stage industrial catalog enrichment pipeline using schema-enforced AI outputs, ground-truth validation, and calibrated confidence scoring.',
+    stack: ['TypeScript', 'Gemini', 'Supabase'],
     colour: 'blue',
+    github: 'https://github.com/Dkumar8264/induintel',
+    live: null,
+    status: 'Prototype',
   },
   {
     number: '03',
-    name: 'Platform Zero',
-    type: 'Experimental build',
-    description: 'A concept for a tactile, story-first web experience where every stop reveals a different layer of the work.',
-    stack: ['Three.js', 'Prototype', 'Interaction'],
+    name: 'TeamFlow',
+    type: 'Team project management',
+    description: 'A MERN collaboration workspace for projects, tasks, assignments, comments, status tracking, and secure token-based authentication.',
+    stack: ['React', 'Express', 'MongoDB'],
     colour: 'violet',
+    github: 'https://github.com/Dkumar8264/Teamflow',
+    live: 'https://teamflow-dusky.vercel.app',
+    status: 'Live project',
+  },
+  {
+    number: '04',
+    name: 'Recampus',
+    type: 'Campus community platform',
+    description: 'A secure MERN and PWA experience for college students to post lost-and-found items and peer-to-peer marketplace listings.',
+    stack: ['React', 'Node.js', 'MongoDB'],
+    colour: 'orange',
+    github: 'https://github.com/Dkumar8264/Recampus',
+    live: null,
+    status: 'In development',
+  },
+  {
+    number: '05',
+    name: 'SpendX',
+    type: 'Personal finance',
+    description: 'A focused financial tracking and budgeting application designed to make expenses and budget decisions easier to understand.',
+    stack: ['JavaScript', 'React', 'Vercel'],
+    colour: 'blue',
+    github: 'https://github.com/Dkumar8264/SpendX',
+    live: 'https://spendx-xi.vercel.app',
+    status: 'Live project',
   },
 ] as const
 
@@ -140,7 +171,7 @@ function App() {
       <header className="site-header">
         <button className="wordmark" onClick={() => scrollToSection('arrival')} type="button">
           <span className="wordmark__mark" aria-hidden="true">MM</span>
-          <span>Midnight Metro</span>
+          <span>Deepak / Metro</span>
         </button>
         <nav aria-label="Primary navigation" className="site-nav">
           <a href="#projects">Projects</a>
@@ -183,9 +214,9 @@ function App() {
           </div>
           <div className="hero-glow" aria-hidden="true" />
           <div className="hero-content">
-            <p className="eyebrow"><MapPin size={14} aria-hidden="true" />Now arriving / Personal portfolio</p>
-            <h1>Your work,<br /><em>in motion.</em></h1>
-            <p className="hero-lede">An interactive 3D journey through ideas, interfaces, and the projects that move them forward.</p>
+            <p className="eyebrow"><MapPin size={14} aria-hidden="true" />Now arriving / Deepak Kumar</p>
+            <h1>Ideas built<br /><em>in motion.</em></h1>
+            <p className="hero-lede">AI &amp; ML student and full-stack developer building useful products with React, Python, and the MERN stack.</p>
             <div className="hero-actions">
               <Button className="metro-button metro-button--primary" onClick={() => scrollToSection('projects')}>
                 Board the train <MoveRight size={16} aria-hidden="true" />
@@ -214,10 +245,10 @@ function App() {
 
         <section className="section projects-section" id="projects">
           <div className="section-intro reveal" data-reveal>
-            <p className="eyebrow">Carriage 01—03 / Selected work</p>
+            <p className="eyebrow">Carriage 01—05 / GitHub projects</p>
             <div>
               <h2>Choose a window.<br />See what’s moving.</h2>
-              <p>These are build-ready case-study placeholders. Replace them with your real work, outcomes, screenshots, and links as we develop your portfolio.</p>
+              <p>Real projects from my GitHub—from AI forecasting and product intelligence to campus communities, teamwork, and personal finance.</p>
             </div>
           </div>
           <div className="project-grid reveal" data-reveal>
@@ -244,7 +275,7 @@ function App() {
           </div>
           <div className="project-spotlight reveal" data-reveal>
             <div>
-              <span className="project-spotlight__count">0{activeProject + 1} / 03</span>
+              <span className="project-spotlight__count">0{activeProject + 1} / 05 · {selectedProject.status}</span>
               <h3>{selectedProject.name}</h3>
               <p>{selectedProject.description}</p>
               <ul aria-label={`${selectedProject.name} skills`}>
@@ -252,7 +283,7 @@ function App() {
               </ul>
             </div>
             <Button className="metro-button metro-button--primary" onClick={() => setOpenProject(activeProject)}>
-              Open case study <ArrowUpRight size={16} aria-hidden="true" />
+              View project <ArrowUpRight size={16} aria-hidden="true" />
             </Button>
           </div>
         </section>
@@ -272,37 +303,44 @@ function App() {
 
         <section className="section about-section" id="about">
           <div className="about-copy reveal" data-reveal>
-            <p className="eyebrow">The passenger / About you</p>
-            <h2>Make the story<br />yours next.</h2>
-            <p>This section is reserved for your short story: who you are, the kind of problems you love, and why people should travel with you. Keep it personal, specific, and concise.</p>
+            <p className="eyebrow">The passenger / About me</p>
+            <h2>Learning deeply.<br />Building publicly.</h2>
+            <p>I’m Deepak Kumar, a third-year BE student specializing in AI &amp; ML at BMS Institute of Technology, Bengaluru. I build and deploy practical full-stack products, with a focus on MERN, Python, intelligent systems, and clear user experiences.</p>
             <Button className="metro-button metro-button--ghost" variant="outline" onClick={() => scrollToSection('contact')}>Skip to contact <ArrowDown size={16} aria-hidden="true" /></Button>
           </div>
-          <aside className="passenger-card reveal" data-reveal aria-label="Portfolio content checklist">
-            <span className="passenger-card__sticker">Your details here</span>
-            <div className="passenger-card__monogram" aria-hidden="true">YN</div>
-            <div><p>Next, add</p><ul><li>Your name & role</li><li>Professional photo or avatar</li><li>Bio & location</li><li>LinkedIn, GitHub & résumé</li></ul></div>
+          <aside className="passenger-card reveal" data-reveal aria-label="Deepak Kumar profile card">
+            <span className="passenger-card__sticker">Bengaluru · India</span>
+            <div className="passenger-card__monogram" aria-hidden="true">DK</div>
+            <div><p>Current toolkit</p><ul><li>React, Next.js &amp; Tailwind CSS</li><li>Node.js, Express &amp; FastAPI</li><li>Python, AI/ML &amp; Gemini</li><li>MongoDB, PostgreSQL &amp; MySQL</li></ul></div>
           </aside>
         </section>
 
         <section className="contact-section reveal" data-reveal id="contact">
           <p className="eyebrow">Final platform / Contact</p>
           <h2>Let’s build the<br /><em>next thing.</em></h2>
-          <a className="contact-link" href="mailto:hello@yourname.com">hello@yourname.com <ArrowUpRight size={24} aria-hidden="true" /></a>
-          <p className="contact-note">Replace this placeholder address with your preferred contact email before publishing publicly.</p>
+          <a className="contact-link" href="mailto:krd04197@gmail.com">krd04197@gmail.com <ArrowUpRight size={24} aria-hidden="true" /></a>
+          <div className="contact-socials" aria-label="Social profiles">
+            <a href="https://github.com/Dkumar8264" target="_blank" rel="noreferrer">GitHub <ArrowUpRight size={15} aria-hidden="true" /></a>
+            <a href="https://www.linkedin.com/in/deepak-kumar-65a192340" target="_blank" rel="noreferrer">LinkedIn <ArrowUpRight size={15} aria-hidden="true" /></a>
+          </div>
+          <p className="contact-note">Open to thoughtful collaborations, internships, and ambitious product ideas.</p>
           <Button className="metro-button metro-button--ghost loop-button" variant="outline" onClick={() => scrollToSection('arrival')}>
             Ride the loop again <Repeat2 size={16} aria-hidden="true" />
           </Button>
         </section>
       </main>
 
-      <footer className="site-footer"><span>© {currentYear} Your Name</span><span>Midnight Metro / Built to move</span></footer>
+      <footer className="site-footer"><span>© {currentYear} Deepak Kumar</span><span>GitHub @Dkumar8264 / Built to move</span></footer>
 
       <Dialog open={openProject !== null} onOpenChange={(open) => { if (!open) setOpenProject(null) }}>
         <DialogContent className="metro-dialog">
           {openProject !== null && <>
-            <DialogHeader><p className="eyebrow">Project {projects[openProject].number} / Demo content</p><DialogTitle>{projects[openProject].name}</DialogTitle><DialogDescription>{projects[openProject].description}</DialogDescription></DialogHeader>
-            <div className="metro-dialog__route"><span>Brief</span><MoveRight size={16} aria-hidden="true" /><span>Design direction</span><MoveRight size={16} aria-hidden="true" /><span>Build & refine</span></div>
-            <p className="metro-dialog__note">This overlay is ready for your real case-study story, imagery, responsibilities, stack, and measurable result.</p>
+            <DialogHeader><p className="eyebrow">Project {projects[openProject].number} / {projects[openProject].status}</p><DialogTitle>{projects[openProject].name}</DialogTitle><DialogDescription>{projects[openProject].description}</DialogDescription></DialogHeader>
+            <div className="metro-dialog__route">{projects[openProject].stack.map((item, index) => <span key={item}>{index > 0 && <MoveRight size={16} aria-hidden="true" />}{item}</span>)}</div>
+            <div className="metro-dialog__actions">
+              <a className="metro-button metro-button--primary" href={projects[openProject].github} target="_blank" rel="noreferrer">View source <ArrowUpRight size={16} aria-hidden="true" /></a>
+              {projects[openProject].live && <a className="metro-button metro-button--ghost" href={projects[openProject].live} target="_blank" rel="noreferrer">Open live app <ArrowUpRight size={16} aria-hidden="true" /></a>}
+            </div>
           </>}
         </DialogContent>
       </Dialog>
